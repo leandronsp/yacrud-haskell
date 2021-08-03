@@ -1,0 +1,28 @@
+version: '3.9'
+
+services:
+  app:
+    image: haskell
+    working_dir: /app
+    volumes:
+      - ./:/app
+      - cabalCache:/root/.cabal/
+    ports:
+      - '4000:4000'
+    networks:
+      - yacrud
+
+  ruby-ext:
+    image: ruby
+    working_dir: /app
+    volumes:
+      - ./:/app
+    ports:
+      - '4000:4000'
+    networks:
+      - yacrud
+
+volumes:
+  cabalCache:
+networks:
+  yacrud:
