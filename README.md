@@ -13,11 +13,12 @@ make setup
 
 ### Usage
 
-Running the server:
+Running the web server:
 ```
 make haskell.server
 ```
-Using a Ruby TCP client to send a message to the server:
+Open the application in the browser:
 ```
-make ruby.client
+http://localhost:4000
 ```
+
