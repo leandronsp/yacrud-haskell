@@ -13,7 +13,7 @@ haskell.server:
 		--service-ports \
 		--rm \
 		app \
-		bash -c 'cabal install --lib network && ghc -e Main.main app/Main.hs'
+		bash -c 'cabal install --lib network split && ghc -e Main.main app/*.hs'
 
 ruby.client:
 	@docker-compose run \
