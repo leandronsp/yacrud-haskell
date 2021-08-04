@@ -6,7 +6,7 @@ services:
     working_dir: /app
     volumes:
       - ./:/app
-      - cabalCache:/root/.cabal/
+      - stackCache:/root/.stack/
     ports:
       - '4000:4000'
     networks:
@@ -23,6 +23,6 @@ services:
       - yacrud
 
 volumes:
-  cabalCache:
+  stackCache:
 networks:
   yacrud:

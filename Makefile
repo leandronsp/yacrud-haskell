@@ -1,11 +1,12 @@
 setup:
-	@docker-compose run app bash -c 'cabal update'
+	@docker-compose run app bash -c 'stack setup && \
+		stack install network split'
 
 bash:
 	@docker-compose run app bash
 
 repl:
-	@docker-compose run app ghci
+	@docker-compose run app stask repl
 
 haskell.server:
 	@docker-compose run \
@@ -13,7 +14,7 @@ haskell.server:
 		--service-ports \
 		--rm \
 		app \
-		bash -c 'cabal install --lib network split && ghc -e Main.main app/*.hs'
+		bash -c 'stack ghc -- app/*.hs -e main'
 
 ruby.client:
 	@docker-compose run \

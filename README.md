@@ -21,4 +21,3 @@ Open the application in the browser:
 ```
 http://localhost:4000
 ```
-

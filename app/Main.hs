@@ -11,7 +11,7 @@ main = do
   setSocketOption sock ReuseAddr 1
   bind sock (SockAddrInet 4000 0)
   listen sock 2
-  putStrLn "Listening..."
+  putStrLn "Listening on port 4000..."
   loopForever sock
 
 loopForever :: Socket -> IO ()
