@@ -1,12 +1,14 @@
-setup:
-	@docker-compose run app bash -c 'stack setup && \
-		stack install network split'
+setup.volume:
+	@docker volume create --name=stackCache
+
+setup: setup.volume
+	@docker-compose run --rm app bash -c 'stack build'
 
 bash:
-	@docker-compose run app bash
+	@docker-compose run --rm app bash
 
 repl:
-	@docker-compose run app stask repl
+	@docker-compose run --rm app stack repl
 
 haskell.server:
 	@docker-compose run \
