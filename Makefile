@@ -1,8 +1,5 @@
-setup.volume:
-	@docker volume create --name=stackCache
-
-setup: setup.volume
-	@docker-compose run --rm app bash -c 'stack build'
+setup:
+	@docker-compose run --rm app bash -c 'stack setup && stack build'
 
 bash:
 	@docker-compose run --rm app bash

@@ -1,4 +1,4 @@
-module Yacrud.Routes where
+module Routes where
 
 import System.IO
 

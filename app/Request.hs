@@ -1,10 +1,10 @@
-module Yacrud.Request where
+module Request where
 
 import Network.Socket
 import System.IO
 import Data.List.Split
 
-import Yacrud.Routes
+import Routes
 
 processRequest sock = do
   firstLine <- hGetLine sock

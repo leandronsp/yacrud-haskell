@@ -3,7 +3,7 @@ module Main where
 import Network.Socket
 import System.IO
 
-import Yacrud.Request
+import Request
 
 main :: IO ()
 main = do
